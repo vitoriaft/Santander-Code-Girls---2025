@@ -26,16 +26,37 @@ Este módulo apresenta os principais serviços de **rede, segurança e distribui
 
 ##  Diagrama — Representação das Redes na AWS
 
-Usuário 
-↓
-Amazon CloudFront (CDN)
-↓
-Amazon Route 53 (DNS)
-↓
-Elastic Load Balancer (Distribuição de Tráfego)
-↓
-Amazon VPC (Rede Virtual Privada)
-├── Subnet Pública → Instâncias EC2 (Front-end)
-└── Subnet Privada → Bancos de Dados / Aplicações Internas
-↓
-Security Groups
+             Usuário 
+                  │
+                  ▼
+       ┌────────────────────┐
+       │  Amazon CloudFront │  ← (CDN - Distribuição Global de Conteúdo)
+       └────────────────────┘
+                  │
+                  ▼
+       ┌────────────────────┐
+       │   Amazon Route 53  │  ← (DNS e Roteamento de Domínios)
+       └────────────────────┘
+                  │
+                  ▼
+       ┌──────────────────────────────┐
+       │ Elastic Load Balancer (ELB) │  ← (Distribuição de Tráfego)
+       └──────────────────────────────┘
+                  │
+                  ▼
+       ┌──────────────────────────────┐
+       │      Amazon VPC (Rede)       │
+       └──────────────────────────────┘
+              ├──────────────┬──────────────┤
+              │                              │
+              ▼                              ▼
+  ┌────────────────────┐        ┌──────────────────────────┐
+  │ Subnet Pública     │        │ Subnet Privada           │
+  │ EC2 (Front-end)    │        │ Banco de Dados / App     │
+  └────────────────────┘        └──────────────────────────┘
+              │                              │
+              └──────────────┬───────────────┘
+                             ▼
+                  ┌────────────────────────┐
+                  │ Security Groups (SGs)  │  ← (Controle de Acesso)
+                  └────────────────────────┘
