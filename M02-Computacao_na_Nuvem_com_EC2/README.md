@@ -16,4 +16,14 @@ Durante as atividades, foram abordados temas sobre criação, gerenciamento e ot
    - **S3 (Simple Storage Service):** armazenamento de objetos para arquivos, backups e dados globais.  
 
 3. **Desafio de Projeto — Gerenciando Instâncias EC2 na AWS**  
-   Ati
+   Atividade prática envolvendo o lançamento e gerenciamento de uma instância EC2, configuração de chaves SSH, grupos de segurança e acesso via terminal.
+
+---
+
+## Objetivos de Aprendizado
+
+- Entender o funcionamento das instâncias EC2 e seus diferentes tipos.  
+- Conhecer as opções de armazenamento em nuvem (EBS e S3) e suas diferenças.  
+- Aplicar boas práticas de segurança, otimização e gerenciamento de recursos.  
+- Realizar operações básicas de criação, monitoramento e encerramento de instâncias.
+
